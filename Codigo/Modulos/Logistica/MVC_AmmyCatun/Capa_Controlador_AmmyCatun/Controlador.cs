@@ -8,63 +8,99 @@ using System.Windows.Forms;
 using System.Data;
 using System;
 
+
 namespace Capa_Controlador_AmmyCatun
 {
-    public class ControladorChofer
+    // Creacion de clase de control datos pedido Realizado por Ammy Patricia Catun Lopez 0901-21-4857
+    public class ControladorPedido
     {
         private Capa_Modelo_AmmyCatun.Sentencias sentencias = new Capa_Modelo_AmmyCatun.Sentencias();
-
-        public int guardarChofer(TextBox idChofer, string sNombreEmp, string sNumeroIdent, string sNombre, string sLicencia, string sTelefono, string sDireccion)
-        {
-            if (string.IsNullOrEmpty(idChofer.Text) || string.IsNullOrEmpty(sNombreEmp) || string.IsNullOrEmpty(sNumeroIdent) ||
-                string.IsNullOrEmpty(sNombre) || string.IsNullOrEmpty(sLicencia) || string.IsNullOrEmpty(sTelefono) || string.IsNullOrEmpty(sDireccion))
-            {
-                MessageBox.Show("Existen campos vacios, revise y vuelva a intentarlo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return 0;
-            }
-            else
-            {
-                sentencias.registrarChofer(idChofer.Text, sNombreEmp, sNumeroIdent, sNombre, sLicencia, sTelefono, sDireccion);
-                return 1;
-            }
-        }
-
         public object getNextId()
         {
-            int nextId = sentencias.getMaxIdChofer();
+            int nextId = sentencias.getMaxIdPedido();
             nextId++;
             return nextId.ToString();
         }
 
-        public DataTable CargarChoferes()
+        public DataTable CargarPedidos()
         {
-            return sentencias.cargarChoferes();
+            return sentencias.cargarPedidos();
         }
 
-        public void eliminarChofer(string idChofer)
+        // Método para obtener el próximo ID de pedido
+        public object GetNextIdPedido()
         {
-            if (string.IsNullOrEmpty(idChofer))
+            int nextId = sentencias.getMaxIdPedido(); // Asegúrate de que este método esté definido en tu clase Sentencias
+            return (nextId + 1).ToString();
+        }
+
+        // Método para guardar un datos pedido Realizado por Ammy Patricia Catun Lopez 0901-21-4857
+        public int guardarPedido(string direccionPartida, string direccionLlegada, string numeroOrdenRecojo, ComboBox cmbFormaPago, string destino, DateTime fechaEmision, DateTime fechaTraslado, int idRemitente, int idDestinatario, int idvehiculo)
+        {
+
+            string formaPago = cmbFormaPago.SelectedItem?.ToString();
+
+            if (string.IsNullOrEmpty(direccionPartida) || string.IsNullOrEmpty(direccionLlegada) || string.IsNullOrEmpty(formaPago) || string.IsNullOrEmpty(destino))
+
+            {
+                MessageBox.Show("Existen campos vacíos, revise y vuelva a intentarlo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+            else
+            {
+                sentencias.registrarPedido(fechaEmision, fechaTraslado, direccionPartida, direccionLlegada, numeroOrdenRecojo, formaPago, destino, idRemitente, idDestinatario, idvehiculo);
+                MessageBox.Show("Pedido ingresado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return 1;
+            }
+        }
+        // Método para eliminar  datos pedido Realizado por Ammy Patricia Catun Lopez 0901-21-4857
+        public void eliminarPedido(string idGuia)
+        {
+            if (string.IsNullOrEmpty(idGuia))
             {
                 MessageBox.Show("Existen campos vacios, revise y vuelva a intentarlo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                sentencias.eliminarChofer(idChofer);
+                sentencias.eliminarPedido(idGuia);
             }
         }
-
-
-        public void modificarChofer(string id, string nombreEmp, string numeroIdent, string nombre, string licencia, string telefono, string direccion)
+        // Método para modificar datos pedido Realizado por Ammy Patricia Catun Lopez 0901-21-4857
+        public int modificarPedido(string direccionPartida, string direccionLlegada, string numeroOrdenRecojo, ComboBox cmbFormaPago, string destino, DateTime fechaEmision, DateTime fechaTraslado, int idRemitente, int idDestinatario, int idvehiculo, int idGuia)
         {
-            sentencias.modificarChofer(id, nombreEmp, numeroIdent, nombre, licencia, telefono, direccion);
+
+            string formaPago = cmbFormaPago.SelectedItem?.ToString();
+
+            if (string.IsNullOrEmpty(direccionPartida) || string.IsNullOrEmpty(direccionLlegada) || string.IsNullOrEmpty(formaPago) || string.IsNullOrEmpty(destino))
+
+            {
+                MessageBox.Show("Existen campos vacíos, revise y vuelva a intentarlo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+            else
+            {
+                sentencias.modificarPedido(fechaEmision, fechaTraslado, direccionPartida, direccionLlegada, numeroOrdenRecojo, formaPago, destino, idRemitente, idDestinatario, idvehiculo, idGuia);
+                MessageBox.Show("Pedido modificado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return 1;
+            }
+        }
+        public string MIndice(string Indice1)
+        {
+            string indice = sentencias.modIndice(Indice1);
+
+            return indice;
         }
 
-        public DataTable buscarChofer(string id)
+        public string MRuta(string Ruta1)
         {
-            return sentencias.buscarChofer(id);
+            string ruta = sentencias.modRuta(Ruta1);
+
+            return ruta;
         }
     }
 
+
+    //Clase de controlador  de Transporte-Vehiculo Realizado por Ammy Patricia Catun Lopez 0901-21-4857
     public class ControladorVehiculo
     {
         private Capa_Modelo_AmmyCatun.Sentencias sentencias = new Capa_Modelo_AmmyCatun.Sentencias();
@@ -81,20 +117,7 @@ namespace Capa_Controlador_AmmyCatun
             nextId++;
             return nextId.ToString();
         }
-        //Boton de eliminar Transporte
-        public void eliminarVehiculo(string idVehiculo)
-        {
 
-            if (string.IsNullOrEmpty(idVehiculo))
-            {
-                MessageBox.Show("Existen campos vacíos, revise y vuelva a intentarlo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                sentencias.eliminarVehiculo(idVehiculo);
-            }
-
-        }
         public int guardarVehiculo(string numeroPlaca, string marca, string color, string descripcion, string horaLlegada, string horaSalida, double pesoTotal, int idChofer)
         {
             if (string.IsNullOrEmpty(numeroPlaca) || string.IsNullOrEmpty(marca) || string.IsNullOrEmpty(color) ||
@@ -109,59 +132,64 @@ namespace Capa_Controlador_AmmyCatun
                 return 1;
             }
         }
-        //Guardar datos de pedidos 
-        public class ControladorPedido
+        // Método para modificar vehiculos Realizado por Ammy Patricia Catun Lopez 0901-21-4857
+        public int modificarVehiculo(int idVehiculo, string numeroPlaca, string marca, string color, string descripcion, string horaLlegada, string horaSalida, double pesoTotal, int idChofer)
         {
-            private Capa_Modelo_AmmyCatun.Sentencias sentencias = new Capa_Modelo_AmmyCatun.Sentencias();
-
-
-            // Método para cargar pedidos
-            public DataTable CargarPedidos()
+            if (idVehiculo <= 0 || string.IsNullOrEmpty(numeroPlaca) || string.IsNullOrEmpty(marca) || string.IsNullOrEmpty(color) || string.IsNullOrEmpty(descripcion) || string.IsNullOrEmpty(horaLlegada) ||
+               string.IsNullOrEmpty(horaSalida) || pesoTotal <= 0 || idChofer <= 0)
             {
-                return sentencias.cargarPedidos(); // Asegúrate de que este método esté definido en tu clase Sentencias
+                MessageBox.Show("Existen campos vacíos, revise y vuelva a intentarlo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return 0;
+            }
+            else
+            {
+                sentencias.modificarVehiculo(idVehiculo, numeroPlaca, marca, color, descripcion, horaLlegada, horaSalida, pesoTotal, idChofer);
+                return 1;
             }
         }
-    }
-    // Método para guardar un pedido
-    public class ControladorPedido
-    {
-        private Capa_Modelo_AmmyCatun.Sentencias sentencias = new Capa_Modelo_AmmyCatun.Sentencias();
 
-
-        public DataTable CargarPedidos()
+        // Método para Eliminar vehiculos Realizado por Ammy Patricia Catun Lopez 0901-21-4857
+        public void eliminarVehiculo(string idVehiculo)
         {
-            return sentencias.cargarPedidos();
-        }
 
-
-        // Método para obtener el próximo ID de pedido
-        public object GetNextIdPedido()
-        {
-            int nextId = sentencias.getMaxIdPedido(); // Asegúrate de que este método esté definido en tu clase Sentencias
-            return (nextId + 1).ToString();
-        }
-
-        public int guardarPedido(string direccionPartida, string direccionLlegada, string numeroOrdenRecojo, ComboBox cmbFormaPago, string destino, DateTime fechaEmision, DateTime fechaTraslado, int idRemitente, int idDestinatario, int idvehiculo)
-        {
+            if (string.IsNullOrEmpty(idVehiculo))
             {
-                string formaPago = cmbFormaPago.SelectedItem?.ToString();
-
-                if (string.IsNullOrEmpty(direccionPartida) || string.IsNullOrEmpty(direccionLlegada) || string.IsNullOrEmpty(formaPago) || string.IsNullOrEmpty(destino))
-                {
-                    MessageBox.Show("Existen campos vacíos, revise y vuelva a intentarlo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return 0;
-                }
-                else
-                {
-                    sentencias.registrarPedido(fechaEmision, fechaTraslado, direccionPartida, direccionLlegada, numeroOrdenRecojo, formaPago, destino, idRemitente, idDestinatario, idvehiculo);
-                    MessageBox.Show("Pedido ingresado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return 1;
-                }
+                MessageBox.Show("Existen campos vacíos, revise y vuelva a intentarlo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                sentencias.eliminarVehiculo(idVehiculo);
+            }
+
+        }
+        // // Método para agregar la ayuda en  formulario Realizado por Ammy Patricia Catun Lopez 0901-21-4857
+        public string MIndice(string Indice1)
+        {
+            string indice = sentencias.modIndice(Indice1);
+
+            return indice;
+        }
+
+        public string MRuta(string Ruta1)
+        {
+            string ruta = sentencias.modRuta(Ruta1);
+
+            return ruta;
         }
     }
-
 }
+
+
+   
+
+      
+
+
+
+
+
+
+
 
 
 

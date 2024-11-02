@@ -1,7 +1,7 @@
 ﻿
 namespace Capa_Vista_AmmyCatun
 {
-    partial class Remitente
+    partial class Destinatario
     {
         /// <summary>
         /// Required designer variable.
@@ -39,18 +39,17 @@ namespace Capa_Vista_AmmyCatun
             this.navegador1.Location = new System.Drawing.Point(0, 0);
             this.navegador1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.navegador1.Name = "navegador1";
-            this.navegador1.Size = new System.Drawing.Size(1405, 1050);
+            this.navegador1.Size = new System.Drawing.Size(1302, 1017);
             this.navegador1.TabIndex = 0;
-            this.navegador1.Load += new System.EventHandler(this.navegador1_Load);
             // 
-            // Remitente
+            // Destinatario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1405, 1050);
+            this.ClientSize = new System.Drawing.Size(1302, 1017);
             this.Controls.Add(this.navegador1);
-            this.Name = "Remitente";
-            this.Text = "Remitente";
+            this.Name = "Destinatario";
+            this.Text = "Destinatario";
             this.ResumeLayout(false);
 
         }

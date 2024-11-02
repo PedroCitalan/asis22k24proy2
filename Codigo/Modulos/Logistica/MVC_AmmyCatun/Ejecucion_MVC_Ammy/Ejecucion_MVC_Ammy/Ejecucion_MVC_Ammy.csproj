@@ -33,8 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Capa_Vista_AmmyCatun">
-      <HintPath>..\..\MVC_AmmyCatun\Capa_Vista_AmmyCatun\bin\Debug\Capa_Vista_AmmyCatun.dll</HintPath>
+    <Reference Include="Capa_Vista_AmmyCatun, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Capa_Vista_AmmyCatun\bin\Debug\Capa_Vista_AmmyCatun.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

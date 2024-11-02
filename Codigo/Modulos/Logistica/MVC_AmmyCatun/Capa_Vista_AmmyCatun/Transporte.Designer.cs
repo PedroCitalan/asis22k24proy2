@@ -36,17 +36,15 @@ namespace Capa_Vista_AmmyCatun
             this.Btn_Actualizar = new System.Windows.Forms.Button();
             this.Dgv_Vehiculo = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Btn_Ayuda = new System.Windows.Forms.Button();
             this.Btn_Reporte = new System.Windows.Forms.Button();
             this.Btn_Modificar = new System.Windows.Forms.Button();
             this.Btn_Eliminar = new System.Windows.Forms.Button();
             this.Btn_Ingresar = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.Btn_Buscar = new System.Windows.Forms.Button();
-            this.Txt_Pla = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Lbl_DATOS = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Txt_IDVeh = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.Txt_HS = new System.Windows.Forms.TextBox();
             this.Txt_HLL = new System.Windows.Forms.TextBox();
             this.Txt_Total = new System.Windows.Forms.TextBox();
@@ -63,19 +61,19 @@ namespace Capa_Vista_AmmyCatun
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Vehiculo)).BeginInit();
             this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.Btn_Actualizar);
             this.groupBox4.Controls.Add(this.Dgv_Vehiculo);
-            this.groupBox4.Location = new System.Drawing.Point(60, 819);
+            this.groupBox4.Location = new System.Drawing.Point(60, 818);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(1744, 518);
             this.groupBox4.TabIndex = 31;
@@ -85,11 +83,11 @@ namespace Capa_Vista_AmmyCatun
             // Btn_Actualizar
             // 
             this.Btn_Actualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(210)))), ((int)(((byte)(197)))));
+            this.Btn_Actualizar.Image = global::Capa_Vista_AmmyCatun.Properties.Resources.ACTUALIZAR_V4;
             this.Btn_Actualizar.Location = new System.Drawing.Point(1599, 123);
             this.Btn_Actualizar.Name = "Btn_Actualizar";
             this.Btn_Actualizar.Size = new System.Drawing.Size(141, 78);
             this.Btn_Actualizar.TabIndex = 6;
-            this.Btn_Actualizar.Text = "ACTUALIZAR";
             this.Btn_Actualizar.UseVisualStyleBackColor = false;
             this.Btn_Actualizar.Click += new System.EventHandler(this.Btn_Actualizar_Click);
             // 
@@ -105,113 +103,78 @@ namespace Capa_Vista_AmmyCatun
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.Btn_Ayuda);
             this.groupBox3.Controls.Add(this.Btn_Reporte);
             this.groupBox3.Controls.Add(this.Btn_Modificar);
             this.groupBox3.Controls.Add(this.Btn_Eliminar);
             this.groupBox3.Controls.Add(this.Btn_Ingresar);
-            this.groupBox3.Location = new System.Drawing.Point(967, 559);
+            this.groupBox3.Location = new System.Drawing.Point(923, 558);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(363, 254);
+            this.groupBox3.Size = new System.Drawing.Size(526, 254);
             this.groupBox3.TabIndex = 30;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "MANTENIMIENTO";
             // 
+            // Btn_Ayuda
+            // 
+            this.Btn_Ayuda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(210)))), ((int)(((byte)(197)))));
+            this.Btn_Ayuda.Image = global::Capa_Vista_AmmyCatun.Properties.Resources.AYUDA_V4;
+            this.Btn_Ayuda.Location = new System.Drawing.Point(366, 100);
+            this.Btn_Ayuda.Name = "Btn_Ayuda";
+            this.Btn_Ayuda.Size = new System.Drawing.Size(131, 78);
+            this.Btn_Ayuda.TabIndex = 5;
+            this.Btn_Ayuda.UseVisualStyleBackColor = false;
+            this.Btn_Ayuda.Click += new System.EventHandler(this.Btn_Ayuda_Click);
+            // 
             // Btn_Reporte
             // 
             this.Btn_Reporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(210)))), ((int)(((byte)(197)))));
+            this.Btn_Reporte.Image = global::Capa_Vista_AmmyCatun.Properties.Resources.reporte;
             this.Btn_Reporte.Location = new System.Drawing.Point(216, 151);
             this.Btn_Reporte.Name = "Btn_Reporte";
-            this.Btn_Reporte.Size = new System.Drawing.Size(141, 78);
+            this.Btn_Reporte.Size = new System.Drawing.Size(131, 78);
             this.Btn_Reporte.TabIndex = 4;
-            this.Btn_Reporte.Text = "VER REPORTE";
             this.Btn_Reporte.UseVisualStyleBackColor = false;
+            this.Btn_Reporte.Click += new System.EventHandler(this.Btn_Reporte_Click);
             // 
             // Btn_Modificar
             // 
             this.Btn_Modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(210)))), ((int)(((byte)(197)))));
+            this.Btn_Modificar.Image = global::Capa_Vista_AmmyCatun.Properties.Resources.EDITAR_V4;
             this.Btn_Modificar.Location = new System.Drawing.Point(46, 151);
             this.Btn_Modificar.Name = "Btn_Modificar";
             this.Btn_Modificar.Size = new System.Drawing.Size(141, 78);
             this.Btn_Modificar.TabIndex = 2;
-            this.Btn_Modificar.Text = "MODIFICAR";
             this.Btn_Modificar.UseVisualStyleBackColor = false;
             this.Btn_Modificar.Click += new System.EventHandler(this.Btn_Modificar_Click);
             // 
             // Btn_Eliminar
             // 
             this.Btn_Eliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(210)))), ((int)(((byte)(197)))));
-            this.Btn_Eliminar.Location = new System.Drawing.Point(205, 58);
+            this.Btn_Eliminar.Image = global::Capa_Vista_AmmyCatun.Properties.Resources.BORRAR_V4;
+            this.Btn_Eliminar.Location = new System.Drawing.Point(206, 58);
             this.Btn_Eliminar.Name = "Btn_Eliminar";
             this.Btn_Eliminar.Size = new System.Drawing.Size(141, 71);
             this.Btn_Eliminar.TabIndex = 1;
-            this.Btn_Eliminar.Text = "ELIMINAR";
             this.Btn_Eliminar.UseVisualStyleBackColor = false;
             this.Btn_Eliminar.Click += new System.EventHandler(this.Btn_Eliminar_Click);
             // 
             // Btn_Ingresar
             // 
             this.Btn_Ingresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(210)))), ((int)(((byte)(197)))));
+            this.Btn_Ingresar.Image = global::Capa_Vista_AmmyCatun.Properties.Resources.guardar;
             this.Btn_Ingresar.Location = new System.Drawing.Point(46, 55);
             this.Btn_Ingresar.Name = "Btn_Ingresar";
             this.Btn_Ingresar.Size = new System.Drawing.Size(141, 77);
             this.Btn_Ingresar.TabIndex = 0;
-            this.Btn_Ingresar.Text = "INGRESAR";
             this.Btn_Ingresar.UseVisualStyleBackColor = false;
             this.Btn_Ingresar.Click += new System.EventHandler(this.Btn_Ingresar_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.Btn_Buscar);
-            this.groupBox2.Controls.Add(this.Txt_Pla);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Location = new System.Drawing.Point(46, 603);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(813, 169);
-            this.groupBox2.TabIndex = 29;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "BUSCAR";
-            // 
-            // Btn_Buscar
-            // 
-            this.Btn_Buscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(210)))), ((int)(((byte)(197)))));
-            this.Btn_Buscar.Location = new System.Drawing.Point(496, 51);
-            this.Btn_Buscar.Name = "Btn_Buscar";
-            this.Btn_Buscar.Size = new System.Drawing.Size(141, 80);
-            this.Btn_Buscar.TabIndex = 6;
-            this.Btn_Buscar.Text = "BUSCAR";
-            this.Btn_Buscar.UseVisualStyleBackColor = false;
-            // 
-            // Txt_Pla
-            // 
-            this.Txt_Pla.Location = new System.Drawing.Point(150, 82);
-            this.Txt_Pla.Name = "Txt_Pla";
-            this.Txt_Pla.Size = new System.Drawing.Size(270, 26);
-            this.Txt_Pla.TabIndex = 20;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(48, 82);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(86, 20);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Nª PLACA:";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(967, 90);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(519, 429);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 34;
-            this.pictureBox1.TabStop = false;
             // 
             // Lbl_DATOS
             // 
             this.Lbl_DATOS.AutoSize = true;
             this.Lbl_DATOS.Font = new System.Drawing.Font("Rockwell Condensed", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lbl_DATOS.Location = new System.Drawing.Point(837, 27);
+            this.Lbl_DATOS.Location = new System.Drawing.Point(837, 28);
             this.Lbl_DATOS.Name = "Lbl_DATOS";
             this.Lbl_DATOS.Size = new System.Drawing.Size(282, 33);
             this.Lbl_DATOS.TabIndex = 33;
@@ -219,6 +182,8 @@ namespace Capa_Vista_AmmyCatun
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.Txt_IDVeh);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.Txt_HS);
             this.groupBox1.Controls.Add(this.Txt_HLL);
             this.groupBox1.Controls.Add(this.Txt_Total);
@@ -242,6 +207,22 @@ namespace Capa_Vista_AmmyCatun
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Vehiculo";
             // 
+            // Txt_IDVeh
+            // 
+            this.Txt_IDVeh.Location = new System.Drawing.Point(352, 82);
+            this.Txt_IDVeh.Name = "Txt_IDVeh";
+            this.Txt_IDVeh.Size = new System.Drawing.Size(54, 26);
+            this.Txt_IDVeh.TabIndex = 21;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(246, 85);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(95, 20);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "ID Vehículo:";
+            // 
             // Txt_HS
             // 
             this.Txt_HS.Location = new System.Drawing.Point(634, 229);
@@ -258,7 +239,7 @@ namespace Capa_Vista_AmmyCatun
             // 
             // Txt_Total
             // 
-            this.Txt_Total.Location = new System.Drawing.Point(307, 388);
+            this.Txt_Total.Location = new System.Drawing.Point(308, 388);
             this.Txt_Total.Name = "Txt_Total";
             this.Txt_Total.Size = new System.Drawing.Size(222, 26);
             this.Txt_Total.TabIndex = 17;
@@ -370,28 +351,35 @@ namespace Capa_Vista_AmmyCatun
             this.ID.TabIndex = 0;
             this.ID.Text = "ID Chofer:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(968, 89);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(519, 429);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 34;
+            this.pictureBox1.TabStop = false;
+            // 
             // Transporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(218)))), ((int)(((byte)(247)))), ((int)(((byte)(245)))));
-            this.ClientSize = new System.Drawing.Size(1832, 1447);
+            this.ClientSize = new System.Drawing.Size(1832, 1062);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Lbl_DATOS);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
             this.Name = "Transporte";
             this.Text = "Transporte";
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Vehiculo)).EndInit();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -407,14 +395,9 @@ namespace Capa_Vista_AmmyCatun
         private System.Windows.Forms.Button Btn_Actualizar;
         private System.Windows.Forms.DataGridView Dgv_Vehiculo;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button Btn_Reporte;
         private System.Windows.Forms.Button Btn_Modificar;
         private System.Windows.Forms.Button Btn_Eliminar;
         private System.Windows.Forms.Button Btn_Ingresar;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button Btn_Buscar;
-        private System.Windows.Forms.TextBox Txt_Pla;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label Lbl_DATOS;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -434,5 +417,9 @@ namespace Capa_Vista_AmmyCatun
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label ID;
+        private System.Windows.Forms.TextBox Txt_IDVeh;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button Btn_Ayuda;
+        private System.Windows.Forms.Button Btn_Reporte;
     }
 }

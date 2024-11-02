@@ -1,7 +1,7 @@
 ﻿
 namespace Capa_Vista_AmmyCatun
 {
-    partial class Remitente
+    partial class frm_Chofer
     {
         /// <summary>
         /// Required designer variable.
@@ -39,18 +39,19 @@ namespace Capa_Vista_AmmyCatun
             this.navegador1.Location = new System.Drawing.Point(0, 0);
             this.navegador1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.navegador1.Name = "navegador1";
-            this.navegador1.Size = new System.Drawing.Size(1405, 1050);
+            this.navegador1.Size = new System.Drawing.Size(1279, 1050);
             this.navegador1.TabIndex = 0;
             this.navegador1.Load += new System.EventHandler(this.navegador1_Load);
             // 
-            // Remitente
+            // frm_Chofer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1405, 1050);
+            this.ClientSize = new System.Drawing.Size(1279, 1050);
             this.Controls.Add(this.navegador1);
-            this.Name = "Remitente";
-            this.Text = "Remitente";
+            this.Name = "frm_Chofer";
+            this.Text = "frm_Chofer";
+            this.Load += new System.EventHandler(this.frm_Chofer_Load);
             this.ResumeLayout(false);
 
         }
